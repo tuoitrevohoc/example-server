@@ -1,0 +1,41 @@
+type Mutation {
+  createTask(
+    """Name of the task"""
+    name: String!
+
+    """Whether the task has finished"""
+    finished: Boolean!
+  ): Task
+  editTask(
+    """Id of the task to change"""
+    id: String!
+
+    """Name of the task"""
+    name: String!
+
+    """Whether the task has finished"""
+    finished: Boolean!
+  ): Task
+}
+
+type Query {
+  helloWorld: String
+  allTasks: [Task]
+  task(
+    """Id of the object to get"""
+    id: String!
+  ): Task
+}
+
+"""a task in a todo list"""
+type Task {
+  """id of the task"""
+  id: String
+
+  """Name of the task"""
+  name: String
+
+  """If this task has finished or not"""
+  finished: Boolean
+}
+
